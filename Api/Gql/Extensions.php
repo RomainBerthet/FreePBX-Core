@@ -107,7 +107,7 @@ class Extensions extends Base {
 								$input = $this->getUpdatedValues($extensionExists,$users,$userman,$input);
 
 								$this->freepbx->Core->delDevice($input['extension'], true);
-								$this->freepbx->Core->delUser($input['extension']);	
+								$this->freepbx->Core->delUser($input['extension'], true);
 								if(!empty($userman))
 							   	$this->freepbx->userman->deleteUserByID($userman['id']);
 								$status = $this->freepbx->Core->processQuickCreate($input['tech'] ,$input['extension'],$input);
